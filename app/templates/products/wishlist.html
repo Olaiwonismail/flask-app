@@ -4,15 +4,16 @@
 
 {% block content %}
 <script type="text/javascript">
-  function addToCart(productId) {
-    // fetch(`http://127.0.0.1:5000/add_to_cart/${productId}`,
-    fetch(`/add_to_cart/${productId}/`,
-    {method: 'POST'}
-
-    )
-    // window.alert('Added to cart 🛒')
-  }
-
+function addToCart(productId) {
+  // fetch(`http://127.0.0.1:5000/add_to_cart/${productId}`,
+    fetch(`/add_to_cart/${productId}`)
+  .then(data =>{
+      if (data){
+window.alert('Added to cart 🛒')
+        
+      }
+    }
+}
 </script>
 
 
