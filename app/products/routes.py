@@ -65,15 +65,15 @@ def add_to_cart(id):
         print(cart)
         response =make_response('    ')
         response.set_cookie('cart',cart+ ' ' +str(id))
-        return response
+        
     else:
 
 
         response =make_response('   ')
         response.set_cookie('cart',str(id))
-        return response
+        
 
-    return 'Done'
+    return redirect(url_for('main.home'))
 
 
 @products.route('/cart/',methods = ['POST','GET'])
